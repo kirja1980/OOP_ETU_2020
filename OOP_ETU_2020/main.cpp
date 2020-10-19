@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-
+#include <C:\Users\kirja\source\repos\OOP_ETU_2020\OOP_ETU_2020\Interface.h>
 
 int main()
 
