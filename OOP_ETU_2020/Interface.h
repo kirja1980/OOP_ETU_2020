@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#define PIXEL_SIZE (sf::Vector2f(4,4))
 
 class IGameCell
 {
