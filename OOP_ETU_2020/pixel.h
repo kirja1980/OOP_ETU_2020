@@ -7,6 +7,7 @@ public:
 	CellWall();
 	CellWall(sf::Vector2f& vec);
 	
+	CellWall& operator= (const CellWall& callwall);
 
 	virtual sf::Vector2f getCords()  const override;//получение координат клетки
 	virtual char getMarker() const override;//получение клетки как объекта
@@ -27,6 +28,8 @@ class CellLand : public IGameCell
 public:
 	CellLand();
 	CellLand(sf::Vector2f& vec);
+
+	CellLand& operator= (const CellLand& cellland);
 
 	virtual sf::Vector2f getCords()  const override;//получение координат клетки
 	virtual char getMarker() const override;//получение клетки как объекта
@@ -49,6 +52,7 @@ public:
 	CellIn();
 	CellIn(sf::Vector2f& vec);
 
+	CellIn& operator= (const CellIn& cellin);
 
 	virtual sf::Vector2f getCords()  const override;//получение координат клетки
 	virtual char getMarker() const override;//получение клетки как объекта
@@ -70,6 +74,7 @@ public:
 	CellOut();
 	CellOut(sf::Vector2f& vec);
 
+	CellOut& operator= (const CellOut& cellout);
 
 	virtual sf::Vector2f getCords()  const override;//получение координат клетки
 	virtual char getMarker() const override;//получение клетки как объекта

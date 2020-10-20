@@ -131,8 +131,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CellIn.cpp" />
+    <ClCompile Include="CellLand.cpp" />
+    <ClCompile Include="CellOut.cpp" />
+    <ClCompile Include="CellWall.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="pixel.cpp" />
     <ClCompile Include="field.cpp" />
   </ItemGroup>
   <ItemGroup>

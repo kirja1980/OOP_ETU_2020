@@ -16,3 +16,14 @@ public:
 
 	virtual void draw(sf::RenderWindow& window) = 0;//отрисовать клетку
 };
+
+class IPerson {
+	virtual ~IPerson() = default;
+
+	virtual sf::Vector2f getCords() const = 0;
+	
+	virtual void setCords(sf::Vector2f cords) = 0;
+	virtual void setColor(sf::Color color) = 0;
+
+	virtual void draw(sf::RenderWindow& window) = 0;
+};
