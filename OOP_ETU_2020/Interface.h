@@ -5,14 +5,13 @@
 class IGameCell
 {
 public:
-	virtual ~IGameCell() = default;
+	virtual ~IGameCell() = default;//деструктор игровой клетки
 
-	virtual sf::Vector2f getCords() const = 0;
-	virtual char getMarker() const = 0;
-	virtual bool getGlobalCords(sf::Vector2f pos, size_t i, size_t j) const = 0;
+	virtual sf::Vector2f getCords() const = 0;//получение координат клетки
+	virtual char getMarker() const = 0;//получение клетки как объекта
 
-	virtual void setCords(sf::Vector2f cords) = 0;
-	virtual void setColor(sf::Color color) = 0;
+	virtual void setCords(sf::Vector2f cords) = 0;//установить координаты клетки
+	virtual void setColor(sf::Color color) = 0;//установить цвет клетки
 
-	virtual void draw(sf::RenderWindow& window) = 0;
+	virtual void draw(sf::RenderWindow& window) = 0;//отрисовать клетку
 };
