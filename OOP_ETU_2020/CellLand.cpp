@@ -35,7 +35,7 @@ sf::Vector2f CellLand::getCords() const {
 
 
 char CellLand::getMarker() const {
-	return ' ';
+	return '0';
 }//получение клетки как объекта
 
 void CellLand::setCords(sf::Vector2f cords) {

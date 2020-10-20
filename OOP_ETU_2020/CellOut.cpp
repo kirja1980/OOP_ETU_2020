@@ -31,7 +31,7 @@ sf::Vector2f CellOut::getCords() const {
 
 
 char CellOut::getMarker() const {
-	return ' ';
+	return '<';
 }//получение клетки как объекта
 
 void CellOut::setCords(sf::Vector2f cords) {

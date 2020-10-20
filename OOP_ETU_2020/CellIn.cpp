@@ -30,7 +30,7 @@ sf::Vector2f CellIn::getCords() const {
 }//получение координат клетки
 
 char CellIn::getMarker() const {
-	return ' ';
+	return '>';
 }//получение клетки как объекта
 
 void CellIn::setCords(sf::Vector2f cords) {

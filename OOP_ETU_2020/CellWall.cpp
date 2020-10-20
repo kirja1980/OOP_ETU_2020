@@ -33,7 +33,7 @@ sf::Vector2f CellWall::getCords() const {
 
 
 char CellWall::getMarker() const {
-	return ' ';
+	return '#';
 }//получение клетки как объекта
 
 void CellWall::setCords(sf::Vector2f cords) {

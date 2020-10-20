@@ -31,6 +31,17 @@ field::field(sf::Vector2f vec) {
 
 }
 
+char field::getMarker(sf::Vector2f vec) {
+	int x = vec.x / PIXEL_SIZE.x;
+	int y = vec.y / PIXEL_SIZE.y;
+	return arr[y][x]->getMarker();
+}
+
+sf::Vector2f field::getSize() {
+	return field_vec;
+}
+
+
 void field::draw(sf::RenderWindow& window) {
 	for (size_t j = 0; j < field_vec.y; j++) {
 		for (size_t i = 0; i < field_vec.x; i++) {

@@ -8,6 +8,9 @@ public:
 	field();
 	field(sf::Vector2f vec);
 
+	char getMarker(sf::Vector2f vec);
+	sf::Vector2f getSize();
+
 	void draw(sf::RenderWindow& window);//отрисовать поле
 	~field();
 

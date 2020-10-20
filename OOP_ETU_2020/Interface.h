@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #define PIXEL_SIZE (sf::Vector2f(4,4))
+#define MY_PLAYER_SIZE (sf::Vector2f(4*2,4*4))
 
 class IGameCell
 {
@@ -18,10 +19,12 @@ public:
 };
 
 class IPerson {
+public:
 	virtual ~IPerson() = default;
 
 	virtual sf::Vector2f getCords() const = 0;
 	
+	virtual void move(sf::Vector2f cords) = 0;
 	virtual void setCords(sf::Vector2f cords) = 0;
 	virtual void setColor(sf::Color color) = 0;
 
