@@ -33,11 +33,11 @@ void PlayerControl(MyPerson &pers, field f) {
 	}
 }
 
-bool isMove(sf::Vector2f vec, sf::Vector2f del, field& f) {
+bool isMove(sf::Vector2f vec, sf::Vector2f delta, field& f) {
 	bool b = false;
 	char c = ' ';
-	if ((vec.x + del.x) >= 0 && (vec.y + del.y) >= 0 && (vec.x + del.x) + MY_PLAYER_SIZE.x < (f.getSize().x) * 4 && (vec.y + del.y) + MY_PLAYER_SIZE.y < (f.getSize().y) * 4 ) {
-		c = f.getMarker(vec + del);
+	if ((vec.x + delta.x) >= 0 && (vec.y + delta.y) >= 0 && (vec.x + delta.x) + MY_LEG_SIZE.x <= (f.getSize().x) * 4 && (vec.y + delta.y) + MY_LEG_SIZE.y * 1 <= (f.getSize().y) * 4 ) {
+		c = f.getMarker(vec + delta);
 		switch (c)
 		{
 		case '#':

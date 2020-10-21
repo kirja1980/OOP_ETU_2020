@@ -16,6 +16,7 @@ public:
 	virtual void draw(sf::RenderWindow& window) override;
 private:
 	sf::RectangleShape shape;
+	sf::RectangleShape leg_shape;
 	sf::Color color;
 	sf::Vector2f cords;
 };

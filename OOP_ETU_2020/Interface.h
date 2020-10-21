@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #define PIXEL_SIZE (sf::Vector2f(4,4))
 #define MY_PLAYER_SIZE (sf::Vector2f(4*2,4*4))
+#define MY_LEG_SIZE (sf::Vector2f(4*2,1*4))
 
 class IGameCell
 {
