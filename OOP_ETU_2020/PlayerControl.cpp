@@ -37,11 +37,14 @@ bool isMove(sf::Vector2f vec, sf::Vector2f delta, field& f) {
 	bool b = false;
 	char c = ' ';
 	if ((vec.x + delta.x) >= 0 && (vec.y + delta.y) >= 0 && (vec.x + delta.x) + MY_LEG_SIZE.x <= (f.getSize().x) * 4 && (vec.y + delta.y) + MY_LEG_SIZE.y * 1 <= (f.getSize().y) * 4 ) {
-		c = f.getMarker(vec + delta);
+		if(delta.x > 0 || delta.y > 0)
+			c = f.getMarker(vec + delta + MY_LEG_SIZE - sf::Vector2f(1,1));
+		else
+			c = f.getMarker(vec + delta);
 		switch (c)
 		{
 		case '#':
-			b = true;
+			b = false;
 			break;
 		default:
 			b = true;
