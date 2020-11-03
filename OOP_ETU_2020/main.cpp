@@ -13,7 +13,8 @@ int main()
 	sf::CircleShape shape(100.f);
 
 	shape.setFillColor(sf::Color::Green);
-
+	sf::Text text;
+	
 	field f;
 	MyPerson pers;
 	while (window.isOpen())
@@ -23,7 +24,6 @@ int main()
 		sf::Event event;
 
 		while (window.pollEvent(event))
-
 		{
 
 			if (event.type == sf::Event::Closed)
@@ -34,7 +34,7 @@ int main()
 
 		window.clear();
 		f.draw(window);
-		PlayerControl(pers,f);
+		PlayerControl(pers,f,window);
 		pers.draw(window);
 
 		//window.draw(shape);

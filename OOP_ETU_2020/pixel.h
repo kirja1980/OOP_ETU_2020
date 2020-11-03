@@ -36,7 +36,6 @@ public:
 
 	virtual void setCords(sf::Vector2f cords) override;//установить координаты клетки
 	virtual void setColor(sf::Color color) override;//установить цвет клетки
-	sf::Vector2f a;
 	virtual void draw(sf::RenderWindow& window) override;//отрисовать клетку
 
 	virtual ~CellLand() override;//деструктор игровой клетки

@@ -8,6 +8,7 @@ public:
 	virtual ~MyPerson() override;
 
 	virtual sf::Vector2f getCords() const override;
+	virtual void logg() override;
 
 	virtual void move(sf::Vector2f cords) override;
 	virtual void setCords(sf::Vector2f cords) override;
@@ -19,4 +20,5 @@ private:
 	sf::RectangleShape leg_shape;
 	sf::Color color;
 	sf::Vector2f cords;
+	std::fstream logging;
 };
