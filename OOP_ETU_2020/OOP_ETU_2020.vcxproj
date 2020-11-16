@@ -135,16 +135,16 @@
     <ClCompile Include="CellLand.cpp" />
     <ClCompile Include="CellOut.cpp" />
     <ClCompile Include="CellWall.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="field.cpp" />
     <ClCompile Include="MyPerson.cpp" />
-    <ClCompile Include="PlayerControl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="field.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="pixel.h" />
     <ClInclude Include="Interface.h" />
-    <ClInclude Include="PlayerControl.h" />
     <ClInclude Include="players.h" />
   </ItemGroup>
   <ItemGroup>
