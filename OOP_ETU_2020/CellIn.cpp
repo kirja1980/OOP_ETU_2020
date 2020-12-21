@@ -25,6 +25,10 @@ CellIn& CellIn::operator=(const CellIn& cellin) {
 	return *this;
 }
 
+sf::Color CellIn::GetColor() const {
+	return color;
+}
+
 sf::Vector2f CellIn::getCords() const {
 	return cords;
 }//получение координат клетки

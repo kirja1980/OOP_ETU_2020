@@ -13,6 +13,7 @@ public:
 
 	virtual sf::Vector2f getCords() const = 0;//получение координат клетки
 	virtual char getMarker() const = 0;//получение клетки как объекта
+	virtual sf::Color GetColor() const = 0;
 
 	virtual void setCords(sf::Vector2f cords) = 0;//установить координаты клетки
 	virtual void setColor(sf::Color color) = 0;//установить цвет клетки
@@ -25,8 +26,13 @@ public:
 	virtual ~IPerson() = default;
 
 	virtual sf::Vector2f getCords() const = 0;
+	/*virtual sf::FloatRect GetGlobalBounds() const = 0;*/
+	virtual int getHP() const = 0;
+	virtual void loss(double damage) = 0;
 	virtual void logg() = 0;
+	virtual bool isLive() = 0;
 
+	virtual void shootform() = 0;
 	virtual void move(sf::Vector2f cords) = 0;
 	virtual void setCords(sf::Vector2f cords) = 0;
 	virtual void setColor(sf::Color color) = 0;

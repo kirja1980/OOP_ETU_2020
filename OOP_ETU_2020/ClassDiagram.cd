@@ -1,56 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="field">
-    <Position X="9.5" Y="0.5" Width="2" />
+    <Position X="10" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAIAAAAAAAAIAAAACgAAAAAAEAAAAAAAAAAE=</HashCode>
       <FileName>field.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Game">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAQAAAAAAAAAAAAQAAiAAAAYAAAAACAAAAA=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="CellWall">
-    <Position X="6" Y="3.5" Width="1.5" />
+    <Position X="4.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAhIAAAiAAAAAAACAAAAgAAAIDAE=</HashCode>
       <FileName>pixel.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CellLand">
-    <Position X="7.75" Y="3.5" Width="1.5" />
+    <Position X="1.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAAAAgIAAAiAEAAAAACAAAAgAAAIBAE=</HashCode>
       <FileName>pixel.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CellIn">
-    <Position X="2.5" Y="3.5" Width="1.5" />
+    <Position X="3" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgIAAAiAAAAAAACAAACgAAAIJAE=</HashCode>
       <FileName>pixel.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CellOut">
-    <Position X="4.25" Y="3.5" Width="1.5" />
+    <Position X="6.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgIAAAiAAAAAAACAAAAgAAAKBAE=</HashCode>
       <FileName>pixel.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IGameCell">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAAiAAAAAAAAAAAAAAAAIAAE=</HashCode>
       <FileName>Interface.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IPerson">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAACAAAIAAAiAAAAAAAAAAAAAAAIIAAA=</HashCode>
       <FileName>Interface.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyPerson">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="8.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAEABAACAAgIAAAiAAAAAAACABAEAAAAIBAA=</HashCode>
       <FileName>players.h</FileName>

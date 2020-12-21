@@ -1,15 +1,32 @@
 #include "Game.h"
+#include <iostream>
+#include <string>
 #define DELTA_SPEED (1)
 #define MULTY_SPEED (3)
 
 Game::Game() {
 
 	window.create(sf::VideoMode(1000, 1000), "SRU.L.K.E.R. CALL FROM THE TOILET");
-
+	hp.setFillColor(sf::Color(60, 150, 22, 255));
+	hp.setPosition(10, 900);
+	hp.setSize(sf::Vector2f(100,20));
+	
 	sf::Text text;
 }
 
+void Game::DrawInterface() {
+	font.loadFromFile("times-new-roman.ttf");//передаем нашему шрифту файл шрифта
+	
+	text.setPosition(sf::Vector2f(100, 100));
+	text.setStyle(sf::Text::Bold | sf::Text::Underlined);//жирный и подчеркнутый текст. по умолчанию он "худой":)) и не подчеркнутый
+	text.setString("Собрано камней:");//задает строку тексту
+	window.draw(text);//рисую этот текст
+	hp.setSize(sf::Vector2f(pers.getHP(), 20));
+	hp.setFillColor(sf::Color(60, pers.getHP(), 22, 255));
+}
+
 void Game::PlayerControl() {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F5)) { std::string p = currentDateTime(); SaveGame(p); std::cout << "Название сохранения: " << p << "\n"; }
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) {
 		if (((sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || (sf::Keyboard::isKeyPressed(sf::Keyboard::A)))) && isMove(pers.getCords(), sf::Vector2f(-DELTA_SPEED * MULTY_SPEED, 0), f, window)) {
@@ -41,6 +58,18 @@ void Game::PlayerControl() {
 	}
 }
 
+void Game::GameLogic() {
+	if (!pers.isLive()) {
+		window.close();
+		return;
+	}
+	if(pers.leg_shape.getGlobalBounds().intersects(tank.leg_shape.getGlobalBounds()))
+		pers.loss(-1);
+	DrawInterface();
+	DrawGame();
+	PlayerControl();
+}
+
 void Game::RenderGame() {
 	while (window.isOpen())
 	{
@@ -56,8 +85,7 @@ void Game::RenderGame() {
 
 		}
 
-		DrawGame();
-		PlayerControl();
+		GameLogic();
 
 		window.display();
 
@@ -67,7 +95,21 @@ void Game::RenderGame() {
 void Game::DrawGame() {
 	window.clear();
 	f.draw(window);
+	
+	tank.draw(window);
+	window.draw(hp);
 	pers.draw(window);
+}
+
+void Game::LoadGame(std::string path){
+
+}
+
+void Game::SaveGame(std::string path) {
+	std::ofstream save(path);
+	f.SaveField(save);
+
+	save.close();
 }
 
 Game::~Game() {

@@ -27,6 +27,10 @@ CellWall& CellWall::operator=(const CellWall& cellwall) {
 
 CellWall::~CellWall() {};//деструктор игровой клетки
 
+sf::Color CellWall::GetColor() const {
+	return color;
+}
+
 sf::Vector2f CellWall::getCords() const {
 	return cords;
 }//получение координат клетки

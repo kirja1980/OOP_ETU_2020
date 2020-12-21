@@ -9,6 +9,7 @@ public:
 	
 	CellWall& operator= (const CellWall& callwall);
 
+	virtual sf::Color GetColor() const override;
 	virtual sf::Vector2f getCords()  const override;//получение координат клетки
 	virtual char getMarker() const override;//получение клетки как объекта
 
@@ -31,6 +32,7 @@ public:
 
 	CellLand& operator= (const CellLand& cellland);
 
+	virtual sf::Color GetColor() const override;
 	virtual sf::Vector2f getCords()  const override;//получение координат клетки
 	virtual char getMarker() const override;//получение клетки как объекта
 
@@ -53,6 +55,7 @@ public:
 
 	CellIn& operator= (const CellIn& cellin);
 
+	virtual sf::Color GetColor() const override;
 	virtual sf::Vector2f getCords()  const override;//получение координат клетки
 	virtual char getMarker() const override;//получение клетки как объекта
 
@@ -75,6 +78,7 @@ public:
 
 	CellOut& operator= (const CellOut& cellout);
 
+	virtual sf::Color GetColor() const override;
 	virtual sf::Vector2f getCords()  const override;//получение координат клетки
 	virtual char getMarker() const override;//получение клетки как объекта
 

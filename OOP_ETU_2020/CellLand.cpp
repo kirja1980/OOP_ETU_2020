@@ -29,6 +29,10 @@ CellLand& CellLand::operator=(const CellLand& cellland) {
 	return *this;
 }
 
+sf::Color CellLand::GetColor() const {
+	return color;
+}
+
 sf::Vector2f CellLand::getCords() const {
 	return cords;
 }//получение координат клетки

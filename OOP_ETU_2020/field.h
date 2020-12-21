@@ -8,6 +8,7 @@ public:
 	field();
 	field(sf::Vector2f vec);
 
+	void SaveField(std::ofstream &save);
 	char getMarker(sf::Vector2f vec);
 	sf::Vector2f getSize();
 

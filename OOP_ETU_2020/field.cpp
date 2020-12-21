@@ -31,11 +31,22 @@ field::field(sf::Vector2f vec) {
 
 }
 
+void field::SaveField(std::ofstream &save) {
+	save << field_vec.y << field_vec.x;
+	for (int i = 0; i < field_vec.y; i++) {
+		for (int j = 0; j < field_vec.x; j++) {
+			save << arr[i][j].;
+		}
+	}
+}
+
 char field::getMarker(sf::Vector2f vec) {
 	int x = vec.x / PIXEL_SIZE.x;
 	int y = vec.y / PIXEL_SIZE.y;
 	return arr[y][x]->getMarker();
 }
+
+
 
 sf::Vector2f field::getSize() {
 	return field_vec;

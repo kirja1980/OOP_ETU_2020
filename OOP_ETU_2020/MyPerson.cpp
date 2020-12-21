@@ -13,8 +13,8 @@ MyPerson::MyPerson() {
 	shape.setFillColor(color);
 	shape.setPosition(cords - sf::Vector2f(0, 3 * PIXEL_SIZE.y));
 	shape.setSize(MY_PLAYER_SIZE);
-	
-	
+	hp = 100;
+	damage = 30;
 
 }
 
@@ -28,8 +28,29 @@ sf::Vector2f MyPerson::getCords() const {
 	return cords;
 }
 
+//sf::FloatRect MyPerson::GetGlobalBounds() const {
+//	return leg_shape.getGlobalBounds();
+//}
+
+int MyPerson::getHP() const {
+	return hp;
+}
+
+void MyPerson::loss(double damage) {
+	hp += damage;
+}
+
 void MyPerson::logg() {
 	logging << "(" << cords.x << ";" << cords.y << ") ";
+}
+
+bool MyPerson::isLive() {
+	if (hp <= 0) return false;
+	return true;
+}
+
+void MyPerson::shootform() {
+
 }
 
 void MyPerson::move(sf::Vector2f cords) {
