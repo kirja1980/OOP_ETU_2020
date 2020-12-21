@@ -15,18 +15,16 @@ Game::Game() {
 }
 
 void Game::DrawInterface() {
-	font.loadFromFile("times-new-roman.ttf");//передаем нашему шрифту файл шрифта
-	
-	text.setPosition(sf::Vector2f(100, 100));
-	text.setStyle(sf::Text::Bold | sf::Text::Underlined);//жирный и подчеркнутый текст. по умолчанию он "худой":)) и не подчеркнутый
-	text.setString("Собрано камней:");//задает строку тексту
-	window.draw(text);//рисую этот текст
 	hp.setSize(sf::Vector2f(pers.getHP(), 20));
 	hp.setFillColor(sf::Color(60, pers.getHP(), 22, 255));
 }
 
 void Game::PlayerControl() {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F5)) { std::string p = currentDateTime(); SaveGame(p); std::cout << "Название сохранения: " << p << "\n"; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F5) && !save.is_open()) {
+		std::string p = "save.txt"/*currentDateTime()*/;
+		std::cout << "Название сохранения: " << p << "\n";
+		SaveGame(p);
+	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) {
 		if (((sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || (sf::Keyboard::isKeyPressed(sf::Keyboard::A)))) && isMove(pers.getCords(), sf::Vector2f(-DELTA_SPEED * MULTY_SPEED, 0), f, window)) {
@@ -102,18 +100,34 @@ void Game::DrawGame() {
 }
 
 void Game::LoadGame(std::string path){
-
+	std::ifstream in(path);
+	if (in.is_open()) {
+		pers.LoadGame(in);
+		tank.LoadGame(in);
+	}
+	else {
+		std::cout << "Ошибка открытия файла!";
+	}
 }
 
 void Game::SaveGame(std::string path) {
-	std::ofstream save(path);
-	f.SaveField(save);
+	
+	path = "save.txt";
+	save.open(path);
+	if (save.is_open()) {
+		pers.SaveGame(save);
+		tank.SaveGame(save);
+	}
+	else {
+		std::cout << "Ошибка открытия файла!";
+	}
+	
 
-	save.close();
+	
 }
 
 Game::~Game() {
-
+	save.close();
 }
 
 bool isMove(sf::Vector2f vec, sf::Vector2f delta, field& f, sf::RenderWindow& window) {

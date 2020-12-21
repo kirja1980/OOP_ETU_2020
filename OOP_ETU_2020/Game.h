@@ -1,4 +1,6 @@
 #pragma once
+
+
 #include "players.h"
 #include "field.h"
 
@@ -22,17 +24,9 @@ private:
 	Tank tank;
 	sf::Text text;
 	sf::Font font;//רנטפע 
+	std::ofstream save;
 };
+const std::string currentDateTime();
 
-const std::string currentDateTime() {
-	time_t     now = time(0);
-	struct tm  tstruct;
-	char       buf[80];
-	tstruct = *localtime(&now);
-	strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
-	std::string path = buf;
-	path.append(".txt");
-	return path;
-}
 
 bool isMove(sf::Vector2f vec, sf::Vector2f delta, field& f, sf::RenderWindow& window);

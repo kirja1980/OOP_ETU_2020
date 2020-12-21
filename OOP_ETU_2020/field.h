@@ -6,7 +6,7 @@
 class field {
 public:
 	field();
-	field(sf::Vector2f vec);
+	/*void LoadGame(std::ifstream &save);*/
 
 	void SaveField(std::ofstream &save);
 	char getMarker(sf::Vector2f vec);
@@ -15,7 +15,7 @@ public:
 	void draw(sf::RenderWindow& window);//отрисовать поле
 	~field();
 
-private:
+//private:
 	sf::Vector2f field_vec;
 	IGameCell*** arr;
 };

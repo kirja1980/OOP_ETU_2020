@@ -18,7 +18,7 @@ public:
 	virtual void draw(sf::RenderWindow& window) override;//отрисовать клетку
 
 	virtual ~CellWall() override;//деструктор игровой клетки
-private:
+//private:
 	sf::RectangleShape shape;
 	sf::Color color;
 	sf::Vector2f cords;
@@ -41,7 +41,7 @@ public:
 	virtual void draw(sf::RenderWindow& window) override;//отрисовать клетку
 
 	virtual ~CellLand() override;//деструктор игровой клетки
-private:
+//private:
 	sf::RectangleShape shape;
 	sf::Color color;
 	sf::Vector2f cords;
@@ -64,7 +64,7 @@ public:
 	virtual void draw(sf::RenderWindow& window) override;//отрисовать клетку
 
 	virtual ~CellIn() override;//деструктор игровой клетки
-private:
+//private:
 	sf::RectangleShape shape;
 	sf::Color color;
 	sf::Vector2f cords;
@@ -87,7 +87,7 @@ public:
 	virtual void draw(sf::RenderWindow& window) override;//отрисовать клетку
 
 	virtual ~CellOut() override;//деструктор игровой клетки
-private:
+//private:
 	sf::RectangleShape shape;
 	sf::Color color;
 	sf::Vector2f cords;

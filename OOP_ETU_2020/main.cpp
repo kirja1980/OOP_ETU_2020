@@ -9,15 +9,15 @@
 #include "players.h"
 #include "Game.h"
 
-
 const std::string currentDateTime() {
 	time_t     now = time(0);
 	struct tm  tstruct;
-	char       buf[80];
+	char       buf[40];
 	tstruct = *localtime(&now);
-	strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
-
-	return buf;
+	strftime(buf, sizeof(buf), "%Y-%m-%d:%X", &tstruct);
+	std::string path = buf;
+	path.append(".txt");
+	return path;
 }
 
 int main()
@@ -25,13 +25,15 @@ int main()
 {
 
 	srand(time(0));
-	std::cout << "currentDateTime()=" << currentDateTime() << std::endl;
-	int k = -1;
+	setlocale(LC_ALL, "Russian");
+	int k = 0;
 	std::cout << "SRU.L.K.E.R. Call of toilet\n"
-				"1 - Новая игра\n";
+				"1 - Новая игра\n"
 				"2 - Загрузить игру\n";
+	std::cin >> k;
 	Game game;
 	std::string path;
+	
 	switch (k)
 	{
 	case 1:
@@ -45,6 +47,7 @@ int main()
 	default:
 		break;
 	}
+	system("pause");
 	return 0;
 
 }

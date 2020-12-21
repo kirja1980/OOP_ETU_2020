@@ -26,18 +26,29 @@ field::field() {
 		}
 	}
 }
-
-field::field(sf::Vector2f vec) {
-
-}
+//
+//void field::LoadGame(std::ifstream &save) {
+//	save >> field_vec.y;
+//	save >> field_vec.x;
+//	unsigned buf;
+//	for (int i = 0; i < field_vec.y; i++) {
+//		for (int j = 0; j < field_vec.x; j++) {
+//			save >> buf;
+//		}
+//	}
+//}
 
 void field::SaveField(std::ofstream &save) {
-	save << field_vec.y << field_vec.x;
+	save << field_vec.y << ' ' << field_vec.x << ' ';
 	for (int i = 0; i < field_vec.y; i++) {
 		for (int j = 0; j < field_vec.x; j++) {
-			save << arr[i][j].;
+			save << arr[i][j]->GetColor().toInteger() << ' '; /*
+			save << arr[i][j]->GetColor().g << ' ';
+			save << arr[i][j]->GetColor().b << ' ';*/
 		}
+		save << "\n";
 	}
+	
 }
 
 char field::getMarker(sf::Vector2f vec) {

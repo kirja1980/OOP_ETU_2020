@@ -19,6 +19,8 @@ public:
 	virtual void setCords(sf::Vector2f cords) override;
 	virtual void setColor(sf::Color color) override;
 
+	void LoadGame(std::ifstream &path);
+	void SaveGame(std::ofstream &path);
 	virtual void draw(sf::RenderWindow& window) override;
 //private:
 	sf::RectangleShape shape;
@@ -50,6 +52,8 @@ public:
 	virtual void setCords(sf::Vector2f cords) override;
 	virtual void setColor(sf::Color color) override;
 
+	void LoadGame(std::ifstream &path);
+	void SaveGame(std::ofstream &path);
 	virtual void draw(sf::RenderWindow& window) override;
 //private:
 	sf::RectangleShape shape;

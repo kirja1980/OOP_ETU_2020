@@ -74,6 +74,18 @@ void MyPerson::setColor(sf::Color color) {
 	shape.setFillColor(color);
 }
 
+void MyPerson::LoadGame(std::ifstream &path) {
+	sf::Vector2f cord;
+	path >> cord.x;
+	path >> cord.y;
+	setCords(cord);
+	path >> hp;
+}
+
+void MyPerson::SaveGame(std::ofstream &path) {
+	path << cords.x << ' ' << cords.y << ' ' << hp << '\n';
+}
+
 void MyPerson::draw(sf::RenderWindow& window) {
 	window.draw(shape);
 }

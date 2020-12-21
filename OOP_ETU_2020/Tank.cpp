@@ -2,7 +2,7 @@
 
 Tank::Tank() {
 	logging.open("LogTank.txt", std::fstream::in | std::fstream::out | std::fstream::app);
-	color = { 0,0,0 };
+	color = { 255,0,0 };
 	cords = { 10 * PIXEL_SIZE.x,10 * PIXEL_SIZE.y };
 
 	leg_shape.setFillColor(sf::Color(0, 0, 0, 255));
@@ -82,7 +82,21 @@ void Tank::setColor(sf::Color color) {
 	shape.setFillColor(color);
 }
 
+
+
+void Tank::LoadGame(std::ifstream &path) {
+	sf::Vector2f cord;
+	path >> cord.x;
+	path >> cord.y;
+	setCords(cord);
+	path >> hp;
+}
+
+void Tank::SaveGame(std::ofstream &path) {
+	path << cords.x << ' ' << cords.y << ' ' << hp << '\n';
+}
+
 void Tank::draw(sf::RenderWindow& window) {
-	window.draw(attack);
+	//window.draw(attack);
 	window.draw(shape);
 }
