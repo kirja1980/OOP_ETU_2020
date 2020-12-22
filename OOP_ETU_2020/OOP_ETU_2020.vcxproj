@@ -212,6 +212,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="LogMyPlayer.txt" />
+    <Text Include="save.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

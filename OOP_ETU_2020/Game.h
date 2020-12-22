@@ -9,12 +9,14 @@ public:
 	Game();
 	void DrawInterface();
 	void GameLogic();
+	bool isMove(sf::Vector2f vec, sf::Vector2f delta);
 	void PlayerControl();
 	void RenderGame();
 	void DrawGame();
 	void LoadGame(std::string path);
 	void SaveGame(std::string path);
 
+	void GameOver();
 	~Game();
 private:
 	sf::RenderWindow window;
@@ -25,6 +27,7 @@ private:
 	sf::Text text;
 	sf::Font font;//רנטפע 
 	std::ofstream save;
+	unsigned time;
 };
 const std::string currentDateTime();
 

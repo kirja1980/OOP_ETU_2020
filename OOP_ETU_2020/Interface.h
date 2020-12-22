@@ -32,7 +32,7 @@ public:
 	virtual void logg() = 0;
 	virtual bool isLive() = 0;
 
-	virtual void shootform() = 0;
+	virtual int shootform(unsigned random) = 0;
 	virtual void move(sf::Vector2f cords) = 0;
 	virtual void setCords(sf::Vector2f cords) = 0;
 	virtual void setColor(sf::Color color) = 0;

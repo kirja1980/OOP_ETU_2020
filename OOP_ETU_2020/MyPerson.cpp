@@ -49,8 +49,8 @@ bool MyPerson::isLive() {
 	return true;
 }
 
-void MyPerson::shootform() {
-
+int MyPerson::shootform(unsigned random) {
+	return 0;
 }
 
 void MyPerson::move(sf::Vector2f cords) {

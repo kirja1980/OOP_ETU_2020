@@ -14,7 +14,7 @@ public:
 	virtual void logg() override;
 	virtual bool isLive() override;
 
-	virtual void shootform() override;
+	virtual int shootform(unsigned random) override;
 	virtual void move(sf::Vector2f cords) override;
 	virtual void setCords(sf::Vector2f cords) override;
 	virtual void setColor(sf::Color color) override;
@@ -46,7 +46,7 @@ public:
 	virtual void logg() override;
 	virtual bool isLive() override;
 
-	virtual void shootform() override;
+	virtual int shootform(unsigned random) override;
 	void shoot();
 	virtual void move(sf::Vector2f cords) override;
 	virtual void setCords(sf::Vector2f cords) override;
@@ -64,4 +64,5 @@ public:
 	int hp;
 	int damage;
 	sf::RectangleShape attack;
+	int type_attack;
 };

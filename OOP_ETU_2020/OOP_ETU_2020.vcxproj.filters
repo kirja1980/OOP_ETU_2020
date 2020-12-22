@@ -64,6 +64,9 @@
     <Text Include="LogMyPlayer.txt">
       <Filter>Исходные файлы</Filter>
     </Text>
+    <Text Include="save.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
