@@ -77,10 +77,13 @@ void Game::GameLogic() {
 	}
 	else {
 		if (pers.leg_shape.getGlobalBounds().intersects(tank.attack.getGlobalBounds())) {
-			pers.loss(-2);
+			/*pers.loss(-2);*/
+			pers--;
 		}
-		if (tank.leg_shape.getGlobalBounds().intersects(pers.leg_shape.getGlobalBounds()))
-			tank.loss(-3);
+		if (tank.leg_shape.getGlobalBounds().intersects(pers.leg_shape.getGlobalBounds())) {
+			/*tank.loss(-3);*/
+			tank--;
+		}
 
 		if (tank.attack.getRotation() != 0) {
 			tank.shoot();

@@ -14,6 +14,7 @@ public:
 	virtual void logg() override;
 	virtual bool isLive() override;
 
+	void operator--(int);
 	virtual int shootform(unsigned random) override;
 	virtual void move(sf::Vector2f cords) override;
 	virtual void setCords(sf::Vector2f cords) override;
@@ -46,6 +47,7 @@ public:
 	virtual void logg() override;
 	virtual bool isLive() override;
 
+	void operator--(int);
 	virtual int shootform(unsigned random) override;
 	void shoot();
 	virtual void move(sf::Vector2f cords) override;

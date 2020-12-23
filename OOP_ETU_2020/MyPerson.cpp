@@ -49,6 +49,10 @@ bool MyPerson::isLive() {
 	return true;
 }
 
+void MyPerson::operator--(int) {
+	this->loss(-3);
+}
+
 int MyPerson::shootform(unsigned random) {
 	return 0;
 }

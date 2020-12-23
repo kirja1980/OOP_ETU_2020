@@ -44,6 +44,10 @@ bool Tank::isLive() {
 	return true;
 }
 
+void Tank::operator--(int) {
+	this->loss(-3);
+}
+
 int Tank::shootform(unsigned random) {
 	
 	
